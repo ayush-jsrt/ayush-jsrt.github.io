@@ -1,0 +1,15 @@
+*{
+    font-family: "Modak", cursive;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(95, 29, 182);
+}
+
+#name {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 78px;
+    margin-top: 40vh;
+}
