@@ -8,12 +8,66 @@ body {
 
 nav{
     background-color: rgb(95, 29, 182);
+    height: 100vh;
+    width: 100%
 }
 
 #name {
+    margin: 0;
     font-family: "Modak", cursive;
     text-align: center;
-    color: rgb(0, 0, 0);
     font-size: 78px;
-    margin-top: 40vh;
+    
+    /* Chromatic Effect Settings */
+    color: transparent; /* Make base text transparent so we see the mix */
+    position: relative;
+    text-shadow: none; 
+    /* Blend mode isolation creates a new stacking context for the mix */
+    isolation: isolate; 
+}
+
+/* Red Layer */
+#name::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Red Color */
+    color: #ff0000;
+    
+    /* Screen blending: Red + Cyan = White on dark bg */
+    mix-blend-mode: screen; 
+    
+    /* Slight shift left */
+    transform: translateX(-1px);
+    
+    z-index: 1;
+    clip-path: inset(0 0 0 0);
+    animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+}
+
+/* Cyan ("Blue") Layer */
+#name::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Cyan (Blue+Green) is needed to mix with Red to make White */
+    color: #00ffff;
+    
+    /* Screen blending */
+    mix-blend-mode: screen; 
+    
+    /* Slight shift right */
+    transform: translateX(2px);
+    
+    z-index: 1;
+    clip-path: inset(0 0 0 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
