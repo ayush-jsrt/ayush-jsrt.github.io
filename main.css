@@ -4,6 +4,11 @@
 
 body {
     margin: 0;
+    font-family: 'Poppins', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
 }
 
 nav{
@@ -31,18 +36,48 @@ nav{
     flex-direction: column;
 }
 
+#role {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1vw; /* Reverted to vh as requested */
+    color: #ffd700; /* Gold */
+    margin-top: -7px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.9;
+    
+    /* Typewriter effect */
+    border-right: 3px solid #ffd700;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* New clamp size for name as discussed */
 #name {
     margin: 0;
     font-family: "Modak", cursive;
     text-align: center;
-    font-size: 14vh;
+    font-size: 6vw; /* Reverted to vh as requested */
     
     /* Chromatic Effect Settings */
-    color: transparent; /* Make base text transparent so we see the mix */
+    color: transparent; 
     position: relative;
     text-shadow: none; 
-    /* Blend mode isolation creates a new stacking context for the mix */
     isolation: isolate; 
+}
+
+/* Animations for Role */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ffd700; }
 }
 
 /* Red Layer */
