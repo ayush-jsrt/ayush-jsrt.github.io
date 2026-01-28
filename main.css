@@ -9,14 +9,33 @@ body {
 nav{
     background-color: rgb(95, 29, 182);
     height: 100vh;
-    width: 100%
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navleft{
+    float: left;
+    height: 100%;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#navright{
+    float: right;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #name {
     margin: 0;
     font-family: "Modak", cursive;
     text-align: center;
-    font-size: 78px;
+    font-size: 14vh;
     
     /* Chromatic Effect Settings */
     color: transparent; /* Make base text transparent so we see the mix */
