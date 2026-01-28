@@ -52,7 +52,16 @@ nav{
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+    
+    /* Animation Sequence:
+       1. 'typing': Types text for 3.5s.
+       2. 'blink-caret': Blinks 5 times (0.75s * 5 ≈ 3.75s).
+       3. 'border-fade': Makes border transparent at the end.
+    */
+    animation: 
+        typing 3.5s steps(40, end) forwards,
+        blink-caret 0.75s step-end 5,
+        border-fade 0.1s forwards 3.75s; /* Triggers after blinking is done */
 }
 
 /* New clamp size for name as discussed */
@@ -78,6 +87,10 @@ nav{
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #ffd700; }
+}
+
+@keyframes border-fade {
+    to { border-right-color: transparent; }
 }
 
 /* Red Layer */
