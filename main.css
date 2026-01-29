@@ -152,6 +152,28 @@ main{
     color: #2e2e2e;
 }
 
+#abouttext{
+    font-size: 2vw;
+    font-family: "DynaPuff", sans-serif;
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+.aboutli{
+    font-size: 1.4vw;
+    font-family: "DynaPuff", sans-serif;
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+.aboutli > *{
+    font-size: 1.7vw;
+    font-family: "DynaPuff", sans-serif;
+    line-height: 1.8;
+    color: #383838;
+}
+    
+
 footer{
     text-align: center;
     padding: 40px 5vw 40px 5vw;
@@ -191,13 +213,13 @@ footer{
     text-decoration: underline;
 }
 
-ul{
+#footerul{
     list-style-type: none;
     padding: 0;
     text-align: left;
 }
 
-li{
+.footerli{
     margin-bottom: 10px;
     opacity: 0.8;
 }
