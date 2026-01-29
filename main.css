@@ -140,6 +140,18 @@ nav{
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
+main{
+    padding: 0 5vw 0 5vw;
+}
+
+.headers{
+    text-align: left;
+    font-size: 3vw;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    color: #2e2e2e;
+}
+
 footer{
     text-align: center;
     padding: 40px 5vw 40px 5vw;
