@@ -155,18 +155,19 @@ footer{
 
 #footerleft{
     float: left;
-    width: 28%;
+    width: 15%;
 }
 
 #footermiddle{
     float: right;
-    margin-left: 5vw;
-    width: 28%;
+    width: 15%;
+    padding-right: 15%;
 }
 
 #footerright{
     float: right;
     width: 40%;
+    padding-right: 15%;
 }
 
 .footerhead{
