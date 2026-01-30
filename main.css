@@ -153,22 +153,22 @@ main{
 }
 
 #abouttext{
-    font-size: 2vw;
-    font-family: "DynaPuff", sans-serif;
+    font-size: 1.4rem;
+    /* font-family: "DynaPuff", sans-serif; */
     line-height: 1.8;
     color: #4a4a4a;
 }
 
 .aboutli{
-    font-size: 1.4vw;
-    font-family: "DynaPuff", sans-serif;
+    font-size: 1.4rem;
+    /* font-family: "DynaPuff", sans-serif; */
     line-height: 1.8;
     color: #4a4a4a;
 }
 
 .aboutli > *{
-    font-size: 1.7vw;
-    font-family: "DynaPuff", sans-serif;
+    font-size: 1.4rem;
+    /* font-family: "DynaPuff", sans-serif; */
     line-height: 1.8;
     color: #383838;
 }
@@ -227,4 +227,209 @@ footer{
     height: 300px;
     float: right;
     opacity: 0.8;
+}
+
+/* Timeline Section - Clean & Modern Side-by-Side */
+.timeline-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    font-family: "DynaPuff", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-row {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    opacity: 0;
+    animation: slideUpFade 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Stagger animations */
+.timeline-row:nth-child(1) { animation-delay: 0.1s; }
+.timeline-row:nth-child(2) { animation-delay: 0.3s; }
+.timeline-row:nth-child(3) { animation-delay: 0.5s; }
+.timeline-row:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Column 1: Time */
+.timeline-time {
+    width: 25%;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 10px;
+    color: #5f1db6;
+    font-weight: 700;
+    font-size: 1.2rem;
+    position: relative;
+    line-height: 1.2;
+}
+
+.timeline-time small {
+    display: block;
+    color: #ffd700; /* Gold */
+    font-size: 0.9rem;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Column 2: Divider Line */
+.timeline-divider {
+    width: 4px; /* The vertical line width */
+    background-color: #ffd70033; /* Faint gold line */
+    position: relative;
+    margin-right: 30px;
+    border-radius: 4px;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #5f1db6; /* Purple dot */
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px; /* Align with title */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 0 3px #ffd700; /* Gold ring */
+    transition: all 0.3s ease;
+}
+
+/* Connect the dots with a stronger active line segment if desired, 
+   or keep it minimal with just the faint line */
+
+/* Column 3: Content */
+.timeline-content {
+    flex: 1;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(95, 29, 182, 0.1); 
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); /* Soft, modern shadow */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Tiny arrow pointing to content */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    transform: rotate(45deg);
+    border-left: 1px solid rgba(95, 29, 182, 0.1);
+    border-bottom: 1px solid rgba(95, 29, 182, 0.1);
+}
+
+.timeline-content h3 {
+    margin: 0;
+    color: #2e2e2e;
+    font-size: 1.5rem;
+    font-family: inherit;
+}
+
+.company-badge {
+    display: inline-block;
+    background: #f0ebfa; /* Light purple tint */
+    color: #5f1db6;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 8px 0 12px 0;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Hover Effects */
+.timeline-row:hover .timeline-dot {
+    transform: translateX(-50%) scale(1.3);
+    background-color: #ffd700;
+    box-shadow: 0 0 0 4px #5f1db6;
+}
+
+.timeline-row:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px -10px rgba(95, 29, 182, 0.2);
+    border-color: #5f1db6;
+}
+
+.timeline-row:hover .company-badge {
+    background: #5f1db6;
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .timeline-row {
+        flex-direction: column;
+        padding-left: 30px; /* Space for the line */
+        margin-bottom: 30px;
+    }
+    
+    .timeline-time {
+        width: 100%;
+        text-align: left;
+        padding: 0 0 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .timeline-time small {
+        margin: 0;
+        display: inline;
+    }
+    
+    /* Make the line stick to the left side */
+    .timeline-divider {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        margin: 0;
+        height: 100%;
+    }
+    
+    .timeline-dot {
+        top: 0; /* Align with top of row */
+    }
+    
+    .timeline-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Adjust arrow */
+    .timeline-content::before {
+        left: 20px;
+        top: -8px;
+        transform: rotate(45deg);
+        border: none;
+        border-top: 1px solid rgba(95, 29, 182, 0.1);
+        border-left: 1px solid rgba(95, 29, 182, 0.1);
+    }
 }
